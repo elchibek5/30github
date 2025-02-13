@@ -1,0 +1,20 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.green[800],
+          title: Text('Am I poor? Nope, im not!'),
+        ),
+        backgroundColor: Colors.greenAccent,
+          body: Center(
+          child: Image(
+            image: AssetImage('images/img.png'),
+          ),
+        )
+      )
+    )
+  );
+}
