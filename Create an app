@@ -2,19 +2,38 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("KYRGYZ COMMUNITY CENTER!!!"),
-          backgroundColor: Colors.blueGrey[700],
-        ),
-        backgroundColor: Colors.blueGrey,
-        body: Center(
-          child: Image(
-                image: AssetImage('images/pic.jpeg')
-          ),
-        )
-      ),
-    ),
+    const MyApp(),
   );
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: const HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("KYRGYZ COMMUNITY CENTER!!!"),
+        backgroundColor: Colors.blueGrey[700],
+      ),
+      backgroundColor: Colors.blueGrey,
+      body: const SafeArea(
+        child: Center(
+          child: Image.asset('images/pic.jpeg'),
+        ),
+      ),
+    );
+  }
 }
